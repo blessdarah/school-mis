@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+
+Route::get('/register', 'PagesController@register');
+
+// Routing to the teacher's dashboard page
+Route::get('/dashboard', 'PagesController@dashboard');
+
+// Routing to the contact page
+Route::get('/contact', 'PagesController@contact');
+
+// Accessing the admin section
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/staff_management', 'AdminController@staff_management');
+Route::get('/admin/add-staff', 'AdminController@add_staff');
+
+Route::get('/admin/student_management', 'AdminController@student_management');
+Route::get('/admin/add-student', 'AdminController@add_student');
+Route::get('/admin/course_management', 'AdminController@course_management');

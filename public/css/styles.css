@@ -1,0 +1,25 @@
+body {
+    font-family: 'open sans', "montserrat", sans-serif;
+}
+
+/* #form__login,
+#form__register {
+    position: relative;
+    top: 80%;
+    transform: translateY(-50%);
+} */
+
+#sidebar {
+    box-sizing: border-box;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+/*
+    Main dashboard styling
+*/
+
+#main-dashboard .summary .card-title{
+    font-weight: bold;
+}
