@@ -19,6 +19,10 @@ class AdminController extends Controller
         return view('admin/add-staff');
     }
 
+    public function staff_profile() {
+        return view('admin/staff_profile');
+    }
+
     public function student_management() {
     	return view('admin/student_management');
     }

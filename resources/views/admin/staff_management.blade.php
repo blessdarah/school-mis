@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="mt-5 clearfix">
-    <a href="/admin/add-staff" class="btn btn-success px-3 float-right"><i class="fa fa-plus"></i> Teacher</a>
+    <a href="/admin/add-staff" class="btn btn-success px-3 float-right"><i class="fa fa-plus"></i> Add Teacher</a>
 </div>
-<!-- Table of all students -->
+<!-- Table of all teachers -->
 <div class="card mt-2">
-    <div class="card-body p-0">
+    <div class="card-body p-0" id="all-teachers">
         <table class="table table-striped">
             <thead class="bg-light">
                 <tr>
@@ -98,14 +98,5 @@
 </div>
 
 <!-- pagination -->
-<nav aria-label="Student navigation to load more content" class="mt-3 clearfix">
-    <ul class="pagination float-right">
-        <li class="page-item disabled"><a href="#" class="page-link">Prev</a></li>
-        <li class="page-item"><a href="#" class="page-link">1</a></li>
-        <li class="page-item"><a href="#" class="page-link">2</a></li>
-        <li class="page-item"><a href="#" class="page-link">3</a></li>
-        <li class="page-item"><a href="#" class="page-link">...</a></li>
-        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-    </ul>
-</nav>
+@include('includes/pagination');
 @endsection

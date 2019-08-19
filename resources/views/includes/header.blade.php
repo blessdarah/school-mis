@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" />
+        <link href="node_modules/datatables.net-dt/css/jquery.dataTables.css" rel="stylesheet"/>
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     </head>
