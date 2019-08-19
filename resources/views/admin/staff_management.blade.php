@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="mt-5 clearfix">
-    <a href="/admin/add-staff" class="btn btn-success px-3 float-right">Add Teacher</a>
+    <a href="/admin/add-staff" class="btn btn-success px-3 float-right"><i class="fa fa-plus"></i> Teacher</a>
 </div>
 <!-- Table of all students -->
 <div class="card mt-2">
