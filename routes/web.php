@@ -32,4 +32,6 @@ Route::get('/admin/staff_profile', 'AdminController@staff_profile');
 // Routes that concerns students from the admin section
 Route::get('/admin/student_management', 'AdminController@student_management');
 Route::get('/admin/add-student', 'AdminController@add_student');
+
+// Routes that concerns courses from the admin section
 Route::get('/admin/course_management', 'AdminController@course_management');
