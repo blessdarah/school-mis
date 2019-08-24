@@ -35,3 +35,6 @@ Route::get('/admin/add-student', 'AdminController@add_student');
 
 // Routes that concerns courses from the admin section
 Route::get('/admin/course_management', 'AdminController@course_management');
+
+// Routes that concerns the payment of fees
+Route::get('/admin/finances', 'AdminController@finances');
