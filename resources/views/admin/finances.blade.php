@@ -12,7 +12,7 @@
            <h3>Pay school fees</h3>
        </div>
        <div class="card-body">
-            <div class="form">
+            <form class="form">
                 <div class="form-group">
                     <label for="class">Choose Student's class</label>
                     <select name="class" id="class" class="form-control">
@@ -45,7 +45,7 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary btn-block mt-2" value="Pay now">
                 </div>
-            </div>
+            </form>
        </div>
    </div>
 </div>

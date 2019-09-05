@@ -8,7 +8,7 @@
 <!-- Table of all teachers -->
 <div class="card mt-2">
     <div class="card-body p-0" id="all-teachers">
-        <table class="table table-striped">
+        <table class="table table-striped" id="staffs">
             <thead class="bg-light">
                 <tr>
                     <th>#</th>

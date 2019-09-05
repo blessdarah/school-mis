@@ -1,3 +1,9 @@
+
+$(document).ready(function(){
+    $('#staffs').DataTable();
+ });
+
+
 const tProfileForm = document.querySelector('.profile__staff-info');
 const updateTeacherAccountBtn = tProfileForm.querySelector('#update-profile-btn');
 
