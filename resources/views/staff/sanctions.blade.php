@@ -1,8 +1,9 @@
-@extends('layouts/dashboard')
+@extends('layouts/teacher')
 
 @section('content')
-{{-- Disciplinary form overlay --}}
-<div class="modal fade" id="add-disc-report" tabindex="-1" aria-lable="New course" aria-hidden="true">
+<div class="mt-5 mx-2">
+  {{-- Overlay form to add a sanction  --}}
+  <div class="modal fade" id="new-sanction" tabindex="-1" aria-lable="New sanction" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,59 +49,58 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-outline-secondary">Close</button>
-                    <button class="btn btn-primary">Create Report</button>
+                    <button class="btn btn-primary">Add sactions </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="mt-5 clearfix">
-    <button class="btn btn-success px-3 float-right" data-toggle="modal" data-target="#add-disc-report">Add disciplinary report</button>
-</div>
-    <div class="card px-0 mt-2">
-    <div class="card-body p-0">
-        <table class="table table-striped">
-            <thead class="bg-light">
-                <td><strong>#</strong></td>
-                <td><strong>Student name</strong></td>
-                <td><strong>Crime committed</strong></td>
-                <td><strong>Gravity</strong></td>
-                <td><strong>Date</strong></td>
-                <td><strong>Sanction</strong></td>
-                <td><strong>Options</strong></td>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Bless Darah</td>
-                    <td>Slaped a teacher</td>
-                    <td class="text-danger">Serious</td>
-                    <td>March 03</td>
-                    <td>Dismissal</td>
-                    <td>
-                        <a href="#"><span class="badge badge-primary">view</span></a>
-                        <a href="#"><span class="badge badge-success">edit</span></a>
-                        <a href="#"><span class="badge badge-danger">delete</span></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Sonkey Victor</td>
-                    <td>Cheating in exam</td>
-                    <td class="text-danger">Serious</td>
-                    <td>March 03</td>
-                    <td>Dismissal</td>
-                    <td>
-                        <a href="#"><span class="badge badge-primary">view</span></a>
-                        <a href="#"><span class="badge badge-success">edit</span></a>
-                        <a href="#"><span class="badge badge-danger">delete</span></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
-</div>
+<div class="clearfix"><a href="#" class="btn btn-success float-right px-3" data-toggle="modal" data-target="#new-sanction">New sanction</a></div><hr />
 
+{{-- Table to show all sanctions --}}
+<div class="card px-0 mt-2">
+  <div class="card-body p-0">
+      <table class="table table-striped">
+          <thead class="bg-light">
+              <td><strong>#</strong></td>
+              <td><strong>Student name</strong></td>
+              <td><strong>Crime committed</strong></td>
+              <td><strong>Gravity</strong></td>
+              <td><strong>Date</strong></td>
+              <td><strong>Sanction</strong></td>
+              <td><strong>Options</strong></td>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>Bless Darah</td>
+                  <td>Slaped a teacher</td>
+                  <td class="text-danger">Serious</td>
+                  <td>March 03</td>
+                  <td>Dismissal</td>
+                  <td>
+                      <a href="#"><span class="badge badge-primary">view</span></a>
+                      <a href="#"><span class="badge badge-success">edit</span></a>
+                      <a href="#"><span class="badge badge-danger">delete</span></a>
+                  </td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td>Sonkey Victor</td>
+                  <td>Cheating in exam</td>
+                  <td class="text-danger">Serious</td>
+                  <td>March 03</td>
+                  <td>Dismissal</td>
+                  <td>
+                      <a href="#"><span class="badge badge-primary">view</span></a>
+                      <a href="#"><span class="badge badge-success">edit</span></a>
+                      <a href="#"><span class="badge badge-danger">delete</span></a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>
 
 @endsection

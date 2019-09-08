@@ -15,11 +15,26 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/register', 'PagesController@register');
 
-// Routing to the teacher's dashboard page
-Route::get('/dashboard', 'PagesController@dashboard');
-
 // Routing to the contact page
 Route::get('/contact', 'PagesController@contact');
+
+// ROUTING FOR TEACHING STAFF
+Route::get('/home', 'StaffsController@index');
+
+Route::get('/class', 'StaffsController@class');
+
+Route::get('/reports', 'StaffsController@reports');
+
+Route::get('/sanctions', 'StaffsController@sanctions');
+
+Route::get('/reminders', 'StaffsController@reminders');
+
+Route::get('/settings', 'StaffsController@account_settings');
+
+
+// Routing to the Admin's dashboard page
+Route::get('/dashboard', 'PagesController@dashboard');
+
 
 // Accessing the admin section
 Route::get('/admin', 'AdminController@index');
