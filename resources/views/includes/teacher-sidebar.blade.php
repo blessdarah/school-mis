@@ -5,25 +5,25 @@
 
     <ul class="nav flex-column bg-white">
         <li class="nav-item bg-primary py-2 px-4">
-            <a href="/home" class="nav-link text-white">home</a>
+            <a href="/home" class="nav-link text-white"><i class="fa fa-home"></i> home</a>
         </li>
         <li class="nav-item py-2 px-4">
-            <a href="/reminder" class="nav-link text-dark">Reminders</a>
+            <a href="/reminders" class="nav-link text-dark"><i class="fa fa-calendar"></i> Reminders</a>
         </li>
         <li class="nav-item py-2 px-4">
-            <a href="/courses" class="nav-link text-dark">My Courses</a>
+            <a href="/courses" class="nav-link text-dark"><i class="fa fa-book"></i> My Courses</a>
         </li>
         <li class="nav-item py-2 px-4">
-            <a href="/classes" class="nav-link text-dark">My classes</a>
+            <a href="/classes" class="nav-link text-dark"><i class="fa fa-users"></i> My classes</a>
         </li>
         <li class="nav-item py-2 px-4">
-            <a href="/reports" class="nav-link text-dark">Test Reports</a>
+            <a href="/reports" class="nav-link text-dark"><i class="fa fa-user"></i> Test Reports</a>
         </li>
         <li class="nav-item py-2 px-4">
-            <a href="/sanctions" class="nav-link text-dark">Disciplinary sanctions</a>
+            <a href="/sanctions" class="nav-link text-dark"><i class="fa fa-pencil"></i> Disciplinary sanctions</a>
         </li>
         <li class="nav-item py-2 px-4">
-            <a href="/settings" class="nav-link text-dark">Account settings</a>
+            <a href="/settings" class="nav-link text-dark"><i class="fa fa-gear"></i> Account settings</a>
         </li>
 
         <form action="" class="form-inline ml-4 mt-3">

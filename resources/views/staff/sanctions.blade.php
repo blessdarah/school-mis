@@ -55,7 +55,7 @@
         </div>
     </div>
 </div>
-<div class="clearfix"><a href="#" class="btn btn-success float-right px-3" data-toggle="modal" data-target="#new-sanction">New sanction</a></div><hr />
+<div class="clearfix"><a href="#" class="btn btn-success float-right px-3" data-toggle="modal" data-target="#new-sanction"><i class="fa fa-plus"></i> New sanction</a></div><hr />
 
 {{-- Table to show all sanctions --}}
 <div class="card px-0 mt-2">

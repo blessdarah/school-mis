@@ -5,7 +5,7 @@
 <div class="card profile__staff-info col-md-8 col-lg-6 offset-md-2 offset-lg-3 mt-5 px-0">
     <div class="card-header">User Account settings</div>
         <form class="card-body form">
-        <button class="btn btn-primary mb-2" id="update-profile-btn">Update info</button>
+        <button class="btn btn-primary mb-2" id="update-profile-btn"><i class="fa fa-info-circle"></i> Update info</button>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstname">First name</label>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block d-none" name="upadte-teacher-profile">Save updates</button>
+                <button type="submit" class="btn btn-success btn-block d-none" name="upadte-teacher-profile"><i class="fa fa-check"></i> Save updates</button>
             </div>
         </form>
     </div>

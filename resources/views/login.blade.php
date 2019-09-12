@@ -11,11 +11,11 @@
                     <div class="card-body pb-5">
                         <form action="">
                             <div class="form-group">
-                                <label for="username"><i class="fa fa-user"></i> Username</label>
+                                <label for="username"><i class="fa fa-user text-primary"></i> Username</label>
                                 <input type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <label for="password"><i class="fa fa-lock text-primary"></i> Password</label>
                                 <input type="password" class="form-control" required>
                             </div>
                             <div class="form-group">
