@@ -3,7 +3,8 @@
 @section('content')
 <div class="mt-5">
     <!-- Form to create new reminders -->
-    <form action="#" class="form-inline mx-auto">
+    <form action="reminders" method="post" class="form-inline mx-auto">
+        @csrf
         <div class="form-group">
             <div class="input-group mr-3">
                 <div class="input-group-prepend">
@@ -13,16 +14,20 @@
                     type="text"
                     class="form-control"
                     placeholder="Add a reminder"
+                    name="content"
+                    value="{{ old('dure-date') }}"
                 />
             </div>
+            <div class="text-danger">{{ $errors->first('content') }}</div>
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Remind me on</span>
                 </div>
-                <input type="date" class="form-control" />
+                <input type="date" class="form-control" name="dure-date" value="{{ old('dure-date') }}" />
             </div>
+            <div class="text-danger">{{ $errors->first('dure-date') }}</div>
         </div>
         <input
             type="submit"
@@ -34,18 +39,17 @@
 
 <!-- Reminders section -->
 <section id="reminders" class="d-flex flex-wrap">
-    <?php for($count = 0; $count < 6; $count++): ?>
-    <div class="card mt-3 mr-3" style="max-width: 18rem;">
-      <div class="card-body">
-          <p class="text-right text-secondary"><em>Tuesday Feb 4<sup>th</sup></em></p>
-          <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-              corrupti vero similique laudantium
-          </p>
-          <a href="#" class="card-link">mark as done</a>
-      </div>
-    </div>
-    <?php endfor; ?>
+    @foreach ($reminders as $reminder)
+        <div class="card mt-3 mr-3" style="max-width: 18rem;">
+            <div class="card-body">
+            <p class="text-right text-secondary"><em>{{ $reminder->dure_date }}</em></p>
+                <p>
+                   {{ $reminder->content }}
+                </p>
+                <a href="#" class="card-link">mark as done</a>
+            </div>
+        </div>
+    @endforeach
 </section>
 
 @endsection

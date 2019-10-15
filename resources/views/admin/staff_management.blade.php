@@ -20,18 +20,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Bless Darah</td>
-                    <td>Male</td>
-                    <td>Chemistry</span></td>
-                    <td>Form 5B</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
+                @foreach ($staffs as $staff)
+                    <tr>
+                    <td>{{ $staff->id}}</td>
+                        <td>{{ $staff->first_name}} {{ $staff->last_name}}</td>
+                        <td>{{$staff->gender}}</td>
+                        <td>Chemistry</span></td>
+                        <td>Form 5B</td>
+                        <td>
+                            <a href="#" class="badge badge-info">view</a>
+                            <a href="#" class="badge badge-secondary">edit</a>
+                            <a href="#" class="badge badge-danger">delete</a>
+                        </td>
+                    </tr>
+                @endforeach
                 <tr>
                     <td>2</td>
                     <td>Thomas Person</td>

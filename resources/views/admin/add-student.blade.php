@@ -58,49 +58,6 @@
                         </div>
                     </fieldset>
 
-                    <!-- Parents information -->
-                    <fieldset class="parent-info">
-                        <legend class="text-primary"><h4>Parents info</h4></legend><hr class="mt-0">
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="father-name">Father's name</label>
-                                <input type="text" class="form-control" name="father-name" id="father-name" placeholder="Enter name">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="mother-name">Mother's name</label>
-                                <input type="text" class="form-control" name="mother-name" id="mother-name" placeholder="Enter name">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="father-contact">Father's contact</label>
-                                <input type="tel" class="form-control" name="father-contact" id="father-contact" placeholder="(+237) xxx xxx xxx">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="mother-contact">Mother's contact</label>
-                                <input type="tel" class="form-control" name="mother-contact" id="mother-contact" placeholder="(+237) xxx xxx xxx">
-                            </div>
-
-
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="father-prof">Father's profession</label>
-                                <input type="text" class="form-control" name="father-prof" id="father-prof" placeholder="Profession?">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="mother-prof">Mother's profession</label>
-                                <input type="text" class="form-control" name="mother-prof" id="mother-prof" placeholder="Profession?">
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="father-addr">Father's address</label>
-                                <input type="text" class="form-control" name="father-addr" id="father-addr" placeholder="Town/village - Region">
-                            </div>
-                            <div class="form-group col-md-6 col-sm-12">
-                                <label for="mother-addr">Mother's address</label>
-                                <input type="text" class="form-control" name="mother-addr" id="mother-addr" placeholder="Town/village - Region">
-                            </div>
-                        </div>
-                    </fieldset>
-
                     <input type="submit" name="new-student" class="btn btn-primary btn-block mt-3" value="Create Account">
                 </div>
             </div>

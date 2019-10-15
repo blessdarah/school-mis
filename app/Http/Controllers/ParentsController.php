@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Reminder;
 use Illuminate\Http\Request;
-
-class ReminderController extends Controller
+user App\Parent;
+class ParentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class ReminderController extends Controller
      */
     public function index()
     {
-        $reminders = Reminder::all();
-        return view('staff.reminders')->with('reminders', $reminders);
+        $parents = Parent::all();
+        return view('layouts/parent_management')->with('parents', $parents);
     }
 
     /**
@@ -36,26 +35,16 @@ class ReminderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'content' => 'required',
-            'dure-date' => 'required'
-        ]);
-
-        $reminder = new Reminder();
-        $reminder->content = request('content');
-        $reminder->dure_date = request('dure-date');
-        $reminder->save();
-
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Reminder  $reminder
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Reminder $reminder)
+    public function show($id)
     {
         //
     }
@@ -63,10 +52,10 @@ class ReminderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Reminder  $reminder
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reminder $reminder)
+    public function edit($id)
     {
         //
     }
@@ -75,10 +64,10 @@ class ReminderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Reminder  $reminder
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reminder $reminder)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -86,10 +75,10 @@ class ReminderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Reminder  $reminder
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reminder $reminder)
+    public function destroy($id)
     {
         //
     }

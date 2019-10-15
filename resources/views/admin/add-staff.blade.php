@@ -6,9 +6,11 @@
             <h3 class="card-title text-center">Create Staff Account</h3>
         </div>
         <div class="card-body">
-            <form action="#" class="form">
+            <form action="staffs" method="POST" class="form">
+                @csrf
                 <div class="form-row">
                     <div class="form-group col-sm-12 col-md-6 col-lg-4">
+                        <small class="text-danger">{{$errors->first('firstname') }}</small>
                         <label for="firstname">First name<sup class="text-danger">*</sup></label>
                         <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname" required>
                     </div>
@@ -30,7 +32,7 @@
                         <label for="gender">Gender</label>
                         <select name="gender" id="gender" class="form-control">
                             <option value="male" selected>Male</option>
-                            <option value="male">Female</option>
+                            <option value="female">Female</option>
                         </select>
                     </div>
                     <div class="form-group col-sm-12 col-md-6 col-lg-4">

@@ -17,8 +17,12 @@ class CreateStaffTable extends Migration
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('username');
             $table->string('email');
             $table->string('phone_number');
+            $table->string('password');
+            $table->string('address')->nullable();
+            $table->string('gender');
             $table->timestamps();
         });
     }

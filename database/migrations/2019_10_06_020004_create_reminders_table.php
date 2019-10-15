@@ -20,7 +20,6 @@ class CreateRemindersTable extends Migration
             // Actual table columns
             $table->string('content');
             $table->date('dure_date');
-            $table->string('content');
             $table->timestamps();
         });
     }

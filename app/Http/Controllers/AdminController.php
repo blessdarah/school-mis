@@ -12,6 +12,10 @@ class AdminController extends Controller
         return view('admin/dashboard');
     }
 
+    public function parent_management() {
+        return view('admin/parent_management');
+    }
+
     public function staff_management()
     {
         return view('admin/staff_management');
