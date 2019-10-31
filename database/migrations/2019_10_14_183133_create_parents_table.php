@@ -22,7 +22,7 @@ class CreateParentsTable extends Migration
             $table->string('mothers_name');
             $table->string('mothers_address');
             $table->string('mothers_contact');
-            $table->string('fathers_profession');
+            $table->string('mothers_profession');
             $table->timestamps();
         });
     }

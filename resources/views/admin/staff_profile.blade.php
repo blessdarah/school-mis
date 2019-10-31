@@ -2,52 +2,57 @@
 
 @section('content')
     <div class="container">
-        <div class="jumbotron text-center mb-2 mt-5">
-            <img src="{{asset('images/bless.jpg')}}" alt="Profile image of teacher" class="rounded-circle img-fluid shadow staff__profile-image">
-            <h5 class="mt-3">Bless Darah</h5>
-            <p class="lead">Computer Sciences</p>
+        <div class="row text-center mb-2 mt-5">
+            <div class="jumbotron col-md-8 offset-md-2">
+                <img src="{{asset('images/bless.jpg')}}" alt="Profile image of teacher" class="rounded-circle img-fluid shadow staff__profile-image">
+                <h5 class="mt-3">{{$teacher->first_name}} {{$teacher->last_name}}</h5>
+                <p class="lead">Computer Sciences</p>
+            </div>
         </div>
         <div class="row mt-1 mb-4">
             <!-- Teacher's profile page -->
-            <div class="card profile__staff-info col-md-8 col-lg-6 offset-md-2 offset-lg-3 ">
+            <div class="card profile__staff-info col-md-8 offset-md-2">
                 <form class="card-body form">
                 <button class="btn btn-primary mb-2" id="update-profile-btn">Update info</button>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="firstname">First name</label>
-                            <input type="text" class="form-control" value="Bless" disabled>
+                            <input type="text" class="form-control" value="{{$teacher->first_name}}" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="lastname">Last name</label>
-                            <input type="text" class="form-control" value="Darah" disabled>
+                            <input type="text" class="form-control" value="{{$teacher->last_name}}" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="username" disabled>
+                            <input type="text" class="form-control" value="{{$teacher->username}}" name="username" id="username" placeholder="username" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="password" pattern="[0-9a-zA-Z]+" disabled>
+                            <input type="password" class="form-control" value="{{$teacher->password}}" name="password" id="password" placeholder="password" pattern="[0-9a-zA-Z]+" disabled>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="gender">Gender</label>
                             <select name="gender" id="gender" class="form-control" disabled>
-                                <option value="male" selected>Male</option>
-                                <option value="male">Female</option>
+                                @if ($teacher->gender == "male")
+                                    <option value="male" selected>Male</option>
+                                @else
+                                    <option value="female" selected>Female</option>
+                                @endif
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="telephone">Phone number</label>
-                            <input type="text" class="form-control" name="telephone" id="telephone" value="(+237) 672374414" placeholder="telephone" disabled>
+                            <input type="text" class="form-control" value="{{$teacher->phone_number}}" name="telephone" id="telephone" value="(+237) 672374414" placeholder="telephone" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="email" value="blessdarah@gmail.com" disabled>
+                            <input type="email" class="form-control" value="{{$teacher->email}}" name="email" id="email" placeholder="email" value="blessdarah@gmail.com" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="address" value="Bambili, Bamenda" disabled>
+                            <input type="text" class="form-control" value="{{$teacher->address}}" name="address" id="address" placeholder="address" value="Bambili, Bamenda" disabled>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="class">Assign class</label>

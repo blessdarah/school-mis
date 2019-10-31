@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-user App\Parent;
+use App\Parents;
 class ParentsController extends Controller
 {
     /**
@@ -13,8 +13,8 @@ class ParentsController extends Controller
      */
     public function index()
     {
-        $parents = Parent::all();
-        return view('layouts/parent_management')->with('parents', $parents);
+        $parents = Parents::all();
+        return view('admin/parent_management')->with('parents', $parents);
     }
 
     /**
@@ -35,7 +35,29 @@ class ParentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $parent = new Parents();
+
+        $data = $request->validate([
+            'fathers_address'       => 'required',
+            'mothers_name'          => 'required',
+            'fathers_profession'    => 'required',
+            'mothers_profession'    => 'required',
+            'fathers_contact'       => 'required',
+            'mothers_contact'       => 'required'
+        ]);
+
+
+        $parent->fathers_name = request('fathers_name');
+        $parent->mothers_name = request('mothers_name');
+        $parent->fathers_address = request('fathers_address');
+        $parent->mothers_address = request('mothers_address');
+        $parent->fathers_contact = request('fathers_contact');
+        $parent->mothers_contact = request('mothers_contact');
+        $parent->fathers_profession = request('fathers_profession');
+        $parent->mothers_profession = request('mothers_profession');
+        $parent->save();
+
+        return back();
     }
 
     /**

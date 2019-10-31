@@ -22,6 +22,6 @@ class LevelsController extends Controller
         $class->name = request('class-name');
         $class->save();
 
-        return view('admin/home');
+        return back();
     }
 }

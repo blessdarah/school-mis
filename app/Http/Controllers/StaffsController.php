@@ -15,12 +15,27 @@ class StaffsController extends Controller
     public function index()
     {
         $staffs = Staff::all();
-
-       return view('admin.staff_management')->with("staffs", $staffs);
+       return view('admin/staff_management')->with("staffs", $staffs);
     }
 
-    // CREAT A NEW STAFF AND STORE IN DATABASE
-    public function store(Request $request) {
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $staffInfo = $request->validate([
             'firstname' => 'required',
             'lastname'  => 'required',
@@ -44,24 +59,50 @@ class StaffsController extends Controller
         return back();
     }
 
-    public function class() {
-        return view('staff/class');
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $teacher = Staff::find($id);
+        return view('admin/staff_profile')->with("teacher", $teacher);
     }
 
-    public function reports() {
-        return view('staff/reports');
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
-    public function sanctions() {
-        return view('staff/sanctions');
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
     }
 
-    public function reminders() {
-        return view('staff/reminders');
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        Staff::find($id)->delete();
+        return back();
     }
-
-    public function account_settings() {
-        return view('staff/account_settings');
-    }
-
 }

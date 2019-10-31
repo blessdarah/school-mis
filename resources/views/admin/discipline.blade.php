@@ -1,6 +1,7 @@
 @extends('layouts/dashboard')
 
 @section('content')
+<div>
 {{-- Disciplinary form overlay --}}
 <div class="modal fade" id="add-disc-report" tabindex="-1" aria-lable="New course" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -57,6 +58,7 @@
 <div class="mt-5 clearfix">
     <button class="btn btn-success px-3 float-right" data-toggle="modal" data-target="#add-disc-report">Add disciplinary report</button>
 </div>
+
     <div class="card px-0 mt-2">
     <div class="card-body p-0">
         <table class="table table-striped">

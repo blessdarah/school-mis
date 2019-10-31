@@ -28,72 +28,15 @@
                         <td>Chemistry</span></td>
                         <td>Form 5B</td>
                         <td>
-                            <a href="#" class="badge badge-info">view</a>
-                            <a href="#" class="badge badge-secondary">edit</a>
-                            <a href="#" class="badge badge-danger">delete</a>
+                            <a href="staff/{{$staff->id}}" class="badge badge-info">view profile</a>
+                                <form action="staff/{{$staff->id}}" method="POST" class="form d-inline">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="submit" value="delete" class="btn btn-danger btn-sm p-0 px-2 border-0 rounded-pill">
+                                </form>
                         </td>
                     </tr>
                 @endforeach
-                <tr>
-                    <td>2</td>
-                    <td>Thomas Person</td>
-                    <td>Male</td>
-                    <td>Physics</td>
-                    <td>Form 5B</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Sonkey Victor</td>
-                    <td>Male</td>
-                    <td>Mathematics</td>
-                    <td>Form 3A</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jane Doe</td>
-                    <td>Female</td>
-                    <td>Hitory</td>
-                    <td>Form 5B</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Awah Patience</td>
-                    <td>Female</td>
-                    <td>Literature in English</td>
-                    <td>Form 2C</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>James Tucker</td>
-                    <td>Male</td>
-                    <td>French language</td>
-                    <td>Form 1A</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </div>

@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    </div>
+    {{-- </div> --}}
     {{-- button activate modal for adding parents --}}
     <div class="clearfix"><a href="#" class="btn btn-success float-right px-3" data-toggle="modal" data-target="#new-parent"><i class="fa fa-plus"></i> Add parent</a></div>
 
@@ -66,8 +66,7 @@
             <thead class="bg-light">
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Gender</th>
+                    <th>Father's name</th>
                     <th>Profession</th>
                     <th>Address</th>
                     <th>Contact</th>
@@ -75,31 +74,20 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach($levels as $level)
-                    <tr>
-                        <td>{{ $level->id }}</td>
-                        <td>{{ $level->name }}</td>
-                        <td>Bless Darah</td>
-                        <td>
-                            <a href="#" class="badge badge-info">view</a>
-                            <a href="#" class="badge badge-secondary">edit</a>
-                            <a href="#" class="badge badge-danger">delete</a>
-                        </td>
-                    </tr>
-                @endforeach --}}
+                @foreach ($parents as $parent)
                 <tr>
-                    <td>1</td>
-                    <td>James wiliman</td>
-                    <td>Male</td>
-                    <td>Accountant</td>
-                    <td>Upstation bamenda</td>
-                    <td>569784125</td>
+                    <td>{{$parent->id}}</td>
+                    <td>{{$parent->fathers_name}}</td>
+                    <td>{{$parent->fathers_profession}}</td>
+                    <td>{{$parent->fathers_address}}</td>
+                    <td>{{$parent->fathers_contact}}</td>
                     <td>
                         <a href="#" class="badge badge-info">view</a>
                         <a href="#" class="badge badge-secondary">edit</a>
                         <a href="#" class="badge badge-danger">delete</a>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

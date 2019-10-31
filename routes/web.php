@@ -19,6 +19,7 @@ Route::get('/register', 'PagesController@register');
 Route::get('/contact', 'PagesController@contact');
 
 // ROUTING FOR TEACHING STAFF
+Route::resource('staff', 'StaffsController');
 Route::get('/home', 'StaffsController@index');
 
 Route::get('/class', 'StaffsController@class');
@@ -27,7 +28,7 @@ Route::get('/reports', 'StaffsController@reports');
 
 Route::get('/sanctions', 'StaffsController@sanctions');
 
-Route::get('reminders', 'ReminderController@index');
+Route::get('/reminders', 'ReminderController@index');
 Route::post('reminders', 'ReminderController@store');
 
 Route::get('/settings', 'StaffsController@account_settings');
@@ -43,7 +44,7 @@ Route::get('/admin', 'AdminController@index');
 // Routes that concerns the teacher from the admin section
 Route::get('/admin/staff_management', 'StaffsController@index');
 Route::get('/admin/add-staff', 'AdminController@add_staff');
-Route::get('/admin/staff_profile', 'AdminController@staff_profile');
+Route::get('/admin/staff/{id}', 'StaffsController@index');
 
 Route::post('admin/staffs', 'StaffsController@store');
 
@@ -51,10 +52,11 @@ Route::post('admin/staffs', 'StaffsController@store');
 Route::get('/admin/student_management', 'AdminController@student_management');
 Route::get('/admin/add-student', 'AdminController@add_student');
 Route::get('/admin/view-student', 'AdminController@view_student');
-Route::get('/admin/parent_management', 'AdminController@parent_management');
+Route::get('/admin/parent_management', 'ParentsController@index');
 
 // Routes that concerns courses from the admin section
 Route::get('/admin/course_management', 'AdminController@course_management');
+Route::post('/admin/parents', 'ParentsController@store');
 
 // Routes that concerns the classes of the whole school
 Route::get('/admin/class_management', 'LevelsController@index');
