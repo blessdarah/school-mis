@@ -14,7 +14,7 @@ class StaffsController extends Controller
      */
     public function index()
     {
-        $staffs = Staff::all();
+       $staffs = Staff::all();
        return view('admin/staff_management')->with("staffs", $staffs);
     }
 

@@ -28,12 +28,12 @@
                         <td>Chemistry</span></td>
                         <td>Form 5B</td>
                         <td>
-                            <a href="staff/{{$staff->id}}" class="badge badge-info">view profile</a>
-                                <form action="staff/{{$staff->id}}" method="POST" class="form d-inline">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="submit" value="delete" class="btn btn-danger btn-sm p-0 px-2 border-0 rounded-pill">
-                                </form>
+                            <a href="/staff/{{$staff->id}}" class="badge badge-info">view profile</a>
+                            <form action="/staff/{{$staff->id}}" method="POST" class="form d-inline">
+                                @method('DELETE')
+                                @csrf
+                                <input type="submit" value="delete" class="btn btn-danger btn-sm p-0 px-2 border-0 rounded-pill">
+                            </form>
                         </td>
                     </tr>
                 @endforeach

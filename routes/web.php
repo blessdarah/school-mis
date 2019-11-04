@@ -34,6 +34,11 @@ Route::post('reminders', 'ReminderController@store');
 Route::get('/settings', 'StaffsController@account_settings');
 
 
+// STUDENTS ROUTE
+Route::resource('student', 'StudentsController');
+Route::get('/admin/student_management', 'StudentsController@index');
+Route::get('/admin/edit-student', 'PagesController@edit_student');
+
 // Routing to the Admin's dashboard page
 Route::get('/dashboard', 'PagesController@dashboard');
 
@@ -49,7 +54,7 @@ Route::get('/admin/staff/{id}', 'StaffsController@index');
 Route::post('admin/staffs', 'StaffsController@store');
 
 // Routes that concerns students from the admin section
-Route::get('/admin/student_management', 'AdminController@student_management');
+// Route::get('/admin/student_management', 'AdminController@student_management');
 Route::get('/admin/add-student', 'AdminController@add_student');
 Route::get('/admin/view-student', 'AdminController@view_student');
 Route::get('/admin/parent_management', 'ParentsController@index');

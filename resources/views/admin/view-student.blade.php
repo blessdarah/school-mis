@@ -4,8 +4,8 @@
     {{-- Introducte main student's content --}}
     <div class="container mt-3">
       <div class="jumbotron mb-0">
-        <h3>Student name</h3>
-        <p class="lead">Class</p>
+        <h3>{{$student->firstname}} {{$student->lastname}}</h3>
+        <p class="lead">{{$student->class}}</p>
       </div>
       {{-- Include the navigation for the student's page --}}
       @include('includes/student-nav')
@@ -21,19 +21,22 @@
                 <div class="card-body">
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                      <strong class="text-secondary">First name: </strong> Bless
+                      <strong class="text-secondary">First name: </strong> {{$student->firstname}}
                     </li>
                     <li class="list-group-item">
-                      <strong class="text-secondary">Last name: </strong> Darah
+                      <strong class="text-secondary">Last name: </strong>{{$student->lastname}}
                     </li>
                     <li class="list-group-item">
                       <strong class="text-secondary">Class admitted: </strong> Form 3
                     </li>
                     <li class="list-group-item">
-                      <strong class="text-secondary">Date of Birth: </strong> 04/02/1996
+                      <strong class="text-secondary">Date of Birth: </strong> {{$student->dob}}
                     </li>
                     <li class="list-group-item">
-                      <strong class="text-secondary">Gender: </strong> Male
+                      <strong class="text-secondary">Date of Birth: </strong> {{$student->pob}}
+                    </li>
+                    <li class="list-group-item">
+                      <strong class="text-secondary">Gender: </strong> {{$student->gender}}
                     </li>
                   </ul>
                 </div>
