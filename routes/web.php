@@ -15,6 +15,7 @@
 Route::resource('student', 'StudentsController');
 Route::resource('staff', 'StaffsController');
 Route::resource('course', 'CoursesController');
+Route::resource('level', 'LevelsController');
 
 Route::get('/', 'PagesController@index');
 
@@ -23,11 +24,8 @@ Route::get('/register', 'PagesController@register');
 // Routing to the contact page
 Route::get('/contact', 'PagesController@contact');
 
-// ROUTING FOR TEACHING STAFF
-Route::resource('staff', 'StaffsController');
-Route::get('/home', 'StaffsController@index');
 
-Route::get('/class', 'StaffsController@class');
+Route::get('/home', 'StaffsController@index');
 
 Route::get('/reports', 'StaffsController@reports');
 
@@ -38,7 +36,7 @@ Route::post('reminders', 'ReminderController@store');
 
 Route::get('/settings', 'StaffsController@account_settings');
 
-
+Route::post('admin/staff', 'StaffsController@store');
 // STUDENTS ROUTE
 Route::get('/admin/student_management', 'StudentsController@index');
 
@@ -64,7 +62,7 @@ Route::get('/admin/course_management', 'CoursesController@index');
 
 // Routes that concerns the classes of the whole school
 Route::get('/admin/class_management', 'LevelsController@index');
-Route::post('/admin/levels', 'LevelsController@index');
+Route::post('/admin/levels', 'LevelsController@store');
 
 // Routes that concerns the payment of fees
 Route::get('/admin/finances', 'AdminController@finances');

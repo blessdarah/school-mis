@@ -54,6 +54,7 @@ class StaffsController extends Controller
         $staff->email       = request('email');
         $staff->phone_number   = request('telephone');
         $staff->gender      = request('gender');
+
         $staff->save();
 
         return back();

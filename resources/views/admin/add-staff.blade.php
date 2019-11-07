@@ -6,7 +6,7 @@
             <h3 class="card-title text-center">Create Staff Account</h3>
         </div>
         <div class="card-body">
-            <form action="staffs" method="POST" class="form">
+            <form action="staff" method="POST" class="form">
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-sm-12 col-md-6 col-lg-4">

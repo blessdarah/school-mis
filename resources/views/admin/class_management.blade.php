@@ -46,6 +46,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach($levels as $level)
                     <tr>
                         <td>{{ $level->id }}</td>
@@ -58,16 +59,7 @@
                         </td>
                     </tr>
                 @endforeach
-                <tr>
-                    <td>level id</td>
-                    <td>level name</td>
-                    <td>Bless Darah</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
