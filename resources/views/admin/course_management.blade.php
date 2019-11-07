@@ -16,19 +16,23 @@
                 <button class="close" type="button" data-dismiss="modal" aria-lable="Close"><span>&times;</span></button>
             </div>
             <div class="modal-body">
-                <form action="#" class="form">
+                <form action="/course" method="POST" class="form">
+                    @csrf
                     <div class="form-group">
                         <label for="title">Subject title</label>
-                        <input type="text" class="form-control" name="title" id="title" placeholder="Subject title" required>
+                        <input type="text" class="form-control" name="title" value="{{old('title')}}" id="title" placeholder="Subject title" required>
+                        <span class="text-danger"><small>{{$errors->first("title")}}</small></span>
                     </div>
                     <div class="form-group">
                         <label for="code">Subject Code</label>
-                        <input type="text" class="form-control" name="code" id="code" placeholder="Subject code" required>
+                        <input type="text" class="form-control" name="code" value="{{old('code')}}" id="code" placeholder="Subject code" required>
+                        <span class="text-danger"><small>{{$errors->first("code")}}</small></span>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6 col-sm-12">
                             <label for="coefficient">Subject coefficient</label>
-                            <input type="number" class="form-control" name="coefficient" id="coefficient" placeholder="Subject coefficient" required>
+                        <input type="number" class="form-control" name="coefficient" value="{{old('coefficient')}}" id="coefficient" placeholder="Subject coefficient" required>
+                            <span class="text-danger"><small>{{$errors->first("coefficient")}}</small></span>
                         </div>
                         <div class="form-group col-md-6 col-sm-12">
                             <label for="class">Class taught</label>
@@ -50,11 +54,11 @@
                             <option value="3">Munjam Thomas</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Add Subject</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-outline-secondary">Close</button>
-                <button class="btn btn-primary">Add Subject</button>
             </div>
         </div>
     </div>
@@ -70,84 +74,32 @@
                     <th>#</th>
                     <th>Subject</th>
                     <th>Code</th>
+                    <th>Coefficient</th>
                     <th>Teacher</th>
                     <th>Class</th>
                     <th>Options</th>
                 </tr>
             </thead>
             <tbody>
+                <?php $counter = 1; ?>
+                @foreach ($courses as $course)
                 <tr>
-                    <td>1</td>
-                    <td>Chemistry</span></td>
-                    <td>CHEM 202</td>
+                    <td>{{$counter++}}</td>
+                    <td>{{$course->title}}</span></td>
+                    <td>{{$course->code}}</td>
+                    <td>{{$course->coefficient}}</td>
                     <td>Bless Darah</td>
                     <td>Form 5B</td>
                     <td>
-                        <a href="#" class="badge badge-info">view</a>
                         <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
+                        <form action="/course/{{$course->id}}" method="POST" class="form d-inline">
+                            @method('DELETE')
+                            @csrf
+                            <input type="submit" value="delete" class="btn btn-danger btn-sm p-0 px-2 border-0 rounded-pill">
+                        </form>
                     </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Physics</td>
-                    <td>PHY 210</td>
-                    <td>Thomas Person</td>
-                    <td>Form 5B</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Sonkey Victor</td>
-                    <td>Male</td>
-                    <td>Mathematics</td>
-                    <td>Form 3A</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Jane Doe</td>
-                    <td>Female</td>
-                    <td>Hitory</td>
-                    <td>Form 5B</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Awah Patience</td>
-                    <td>Female</td>
-                    <td>Literature in English</td>
-                    <td>Form 2C</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>James Tucker</td>
-                    <td>Male</td>
-                    <td>French language</td>
-                    <td>Form 1A</td>
-                    <td>
-                        <a href="#" class="badge badge-info">view</a>
-                        <a href="#" class="badge badge-secondary">edit</a>
-                        <a href="#" class="badge badge-danger">delete</a>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

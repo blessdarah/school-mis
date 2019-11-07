@@ -11,6 +11,11 @@
 |
 */
 
+/* ROUTE RESOURCES */
+Route::resource('student', 'StudentsController');
+Route::resource('staff', 'StaffsController');
+Route::resource('course', 'CoursesController');
+
 Route::get('/', 'PagesController@index');
 
 Route::get('/register', 'PagesController@register');
@@ -35,9 +40,7 @@ Route::get('/settings', 'StaffsController@account_settings');
 
 
 // STUDENTS ROUTE
-Route::resource('student', 'StudentsController');
 Route::get('/admin/student_management', 'StudentsController@index');
-Route::get('/admin/edit-student', 'PagesController@edit_student');
 
 // Routing to the Admin's dashboard page
 Route::get('/dashboard', 'PagesController@dashboard');
@@ -49,9 +52,6 @@ Route::get('/admin', 'AdminController@index');
 // Routes that concerns the teacher from the admin section
 Route::get('/admin/staff_management', 'StaffsController@index');
 Route::get('/admin/add-staff', 'AdminController@add_staff');
-Route::get('/admin/staff/{id}', 'StaffsController@index');
-
-Route::post('admin/staffs', 'StaffsController@store');
 
 // Routes that concerns students from the admin section
 // Route::get('/admin/student_management', 'AdminController@student_management');
@@ -60,8 +60,7 @@ Route::get('/admin/view-student', 'AdminController@view_student');
 Route::get('/admin/parent_management', 'ParentsController@index');
 
 // Routes that concerns courses from the admin section
-Route::get('/admin/course_management', 'AdminController@course_management');
-Route::post('/admin/parents', 'ParentsController@store');
+Route::get('/admin/course_management', 'CoursesController@index');
 
 // Routes that concerns the classes of the whole school
 Route::get('/admin/class_management', 'LevelsController@index');
