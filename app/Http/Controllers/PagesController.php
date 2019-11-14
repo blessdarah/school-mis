@@ -17,10 +17,22 @@ class PagesController extends Controller
     }
 
     public function dashboard() {
-    	return view('pages/dashboard');
+    	return view('staff/home');
+    }
+
+    public function sanctions() {
+        return view('staff/sanctions');
+    }
+
+    public function settings() {
+        return view('staff/account_settings');
     }
 
     public function contact() {
     	return view('pages/contact');
+    }
+
+    public function reports() {
+        return view('staff/reports');
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Report;
 use Illuminate\Http\Request;
-use App\Course;
 
-class CoursesController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = Course::latest()->get();
-        return view('admin/course_management')->with("courses", $courses);
+        //
     }
 
     /**
@@ -36,27 +35,16 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title'     => 'required',
-            'code'      => 'required|min:5',
-            'coefficient' => 'required',
-        ]);
-
-        $course = new Course;
-        $course->title = request('title');
-        $course->code = request('code');
-        $course->coefficient = request('coefficient');
-        $course->save();
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Report $report)
     {
         //
     }
@@ -64,37 +52,34 @@ class CoursesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Report $report)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Report $report)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Report $report)
     {
         //
-        Course::find($id)->delete();
-        $message = "Subject deleted successfully";
-        return back()->with("message", $message);
     }
 }

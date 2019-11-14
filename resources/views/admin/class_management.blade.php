@@ -46,7 +46,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach($levels as $level)
                     <tr>
                         <td>{{ $level->id }}</td>

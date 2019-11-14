@@ -4,19 +4,30 @@
     <div class="container mt-5">
        <div class="row">
            <div class="col-lg-4 col-md-6 col-sm-12 offset-lg-4 offset-md-3">
+               @if (count($errors) > 0)
+                   <div class="alert alert-danger">
+                      @foreach ($errors as $error)
+                        <p>{{$error}}</p>
+                      @endforeach
+                   </div>
+               @endif
                 <div class="card shadow" id="form__login">
                     <div class="card-header text-center border-0 bg-white mt-4">
                         <h3>Account login</h3>
                     </div>
                     <div class="card-body pb-5">
-                        <form action="">
+                        <form action="/login" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label for="username"><i class="fa fa-user text-primary"></i> Username</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="name"
+                                    class="form-control"
+                                    value="{{old('username')}}" required>
                             </div>
+
                             <div class="form-group">
                                 <label for="password"><i class="fa fa-lock text-primary"></i> Password</label>
-                                <input type="password" class="form-control" required>
+                                <input type="password" name="password" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <div class="form-check d-inline-block">
@@ -34,5 +45,4 @@
            </div>
        </div>
     </div>
-
 @endsection

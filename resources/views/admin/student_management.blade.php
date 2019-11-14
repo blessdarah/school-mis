@@ -22,7 +22,7 @@
             <tbody>
                 @if($students)
                     @foreach ($students as $student)
-                        {{$counter = 0}}
+                        <?php $counter = 0; ?>
                         <tr>
                             <td>{{$counter += 1}}</td>
                             <td class="text-capitalize">{{$student->firstname}} {{$student->lastname}}</td>

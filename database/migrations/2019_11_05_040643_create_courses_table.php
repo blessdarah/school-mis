@@ -18,8 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->string('code')->unique();
             $table->integer('coefficient');
-            // TODO: Add a teacher foreign key
-            // TODO: Add a class foreign key too
+            $table->integer('level_id');
             $table->timestamps();
         });
     }

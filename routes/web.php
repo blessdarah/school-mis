@@ -20,6 +20,7 @@ Route::resource('level', 'LevelsController');
 Route::get('/', 'PagesController@index');
 
 Route::get('/register', 'PagesController@register');
+Route::post('/login', 'SessionsController@login');
 
 // Routing to the contact page
 Route::get('/contact', 'PagesController@contact');
@@ -40,9 +41,11 @@ Route::post('admin/staff', 'StaffsController@store');
 // STUDENTS ROUTE
 Route::get('/admin/student_management', 'StudentsController@index');
 
-// Routing to the Admin's dashboard page
-Route::get('/dashboard', 'PagesController@dashboard');
-
+// Routing to the teacher's dashboard page
+Route::get('/dashboard', 'PagesController@dashboard')->name("tdashboard");
+Route::get('/sanctions', 'PagesController@sanctions');
+Route::get('/settings', 'PagesController@settings');
+Route::get('/reports', 'PagesController@reports');
 
 // Accessing the admin section
 Route::get('/admin', 'AdminController@index');

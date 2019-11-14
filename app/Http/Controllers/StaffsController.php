@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Staff;
+use App\Level;
 
 class StaffsController extends Controller
 {
@@ -15,7 +16,8 @@ class StaffsController extends Controller
     public function index()
     {
        $staffs = Staff::all();
-       return view('admin/staff_management')->with("staffs", $staffs);
+       $classes = Level::all();
+       return view('admin/staff_management', compact($staffs, $classes));
     }
 
     /**
