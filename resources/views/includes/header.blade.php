@@ -11,6 +11,12 @@
         <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
+
+        {{-- Bootstrap cdn --}}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     </head>
