@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Staff;
-use App\Level;
+use \App\Sanction;
 
-class StaffsController extends Controller
+class SanctionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,11 @@ class StaffsController extends Controller
      */
     public function index()
     {
-       $staffs = Staff::all();
-       $classes = Level::all();
+        $sanctions = Sanction::all();
 
-    //    dd($staffs);
-       return view('admin/staff_management', compact($staffs, $classes));
+        return view('staff.sanctions', [
+            'sanctions' => $sanctions
+        ]);
     }
 
     /**
@@ -29,7 +28,7 @@ class StaffsController extends Controller
      */
     public function create()
     {
-
+        return view("staff.sanctions.create");
     }
 
     /**
@@ -40,28 +39,11 @@ class StaffsController extends Controller
      */
     public function store(Request $request)
     {
-        $staffInfo = $request->validate([
-            'firstname' => 'required',
-            'lastname'  => 'required',
-            'username'  => 'required',
-            'email'     => 'required',
-            'telephone' => 'required',
-            'address'   => 'required',
-            'password'  => 'required'
-        ]);
+        $data = $this->validateData($request);
 
-        $staff = new Staff;
-        $staff->first_name  = request('firstname');
-        $staff->last_name   = request('lastname');
-        $staff->username    = request('username');
-        $staff->password    = request('password');
-        $staff->email       = request('email');
-        $staff->phone_number   = request('telephone');
-        $staff->gender      = request('gender');
+        Sanction::create($data);
 
-        $staff->save();
-
-        return back();
+        return back()->with("message", "Addes successfully");
     }
 
     /**
@@ -72,8 +54,11 @@ class StaffsController extends Controller
      */
     public function show($id)
     {
-        $teacher = Staff::find($id);
-        return view('admin/staff_profile')->with("teacher", $teacher);
+        $sanction = Sanction::find($id);
+
+        return view('staff.sanctions.show', [
+            'sanction' => $sanction
+        ]);
     }
 
     /**
@@ -84,7 +69,11 @@ class StaffsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sanction = Sanction::find($id);
+
+        return view('staff.sanctions.edit', [
+            'sanction' => $sanction
+        ]);
     }
 
     /**
@@ -96,7 +85,13 @@ class StaffsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $this->validateData($request);
+
+        $sanction = Sanction::find($id);
+        $sanction->update($data);
+
+        return back()->with("message", "Updated successfully");
+
     }
 
     /**
@@ -107,7 +102,17 @@ class StaffsController extends Controller
      */
     public function destroy($id)
     {
-        Staff::find($id)->delete();
-        return back();
+        Sanction::find($id)->delete();
+
+        return back()->with("message", "Sanction recorde deleted");
+    }
+
+
+    public function validateData($request) {
+       return $request->validate([
+            'crime'     => 'required',
+            'details'   => 'required',
+            'data'      => ''
+        ]);
     }
 }

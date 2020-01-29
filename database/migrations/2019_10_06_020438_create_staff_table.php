@@ -23,7 +23,7 @@ class CreateStaffTable extends Migration
             $table->string('password');
             $table->string('address')->nullable();
             $table->string('gender');
-            $table->integer('level_id'); // a teacher belongs to a class
+            // $table->integer('level_id'); // a teacher belongs to a class
             $table->timestamps();
         });
     }

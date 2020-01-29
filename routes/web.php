@@ -16,6 +16,7 @@ Route::resource('student', 'StudentsController');
 Route::resource('staff', 'StaffsController');
 Route::resource('course', 'CoursesController');
 Route::resource('level', 'LevelsController');
+Route::resource('sanction', 'SanctionsController');
 
 Route::get('/', 'PagesController@index');
 
@@ -30,8 +31,6 @@ Route::get('/home', 'StaffsController@index');
 
 Route::get('/reports', 'StaffsController@reports');
 
-Route::get('/sanctions', 'StaffsController@sanctions');
-
 Route::get('/reminders', 'ReminderController@index');
 Route::post('reminders', 'ReminderController@store');
 
@@ -43,7 +42,7 @@ Route::get('/admin/student_management', 'StudentsController@index');
 
 // Routing to the teacher's dashboard page
 Route::get('/dashboard', 'PagesController@dashboard')->name("tdashboard");
-Route::get('/sanctions', 'PagesController@sanctions');
+
 Route::get('/settings', 'PagesController@settings');
 Route::get('/reports', 'PagesController@reports');
 
@@ -76,3 +75,7 @@ Route::get('/admin/discipline', 'AdminController@discipline');
 
 // User account settings
 Route::get('/admin/account_settings', 'AdminController@account_settings');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

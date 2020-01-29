@@ -19,7 +19,7 @@
         <a href="/reports" class="nav-link text-dark"><i class="fa fa-user"></i> Test Reports</a>
     </li>
     <li class="nav-item py-2 px-4">
-        <a href="/sanctions" class="nav-link text-dark"><i class="fa fa-pencil"></i> Disciplinary sanctions</a>
+        <a href="{{route('sanction.index')}}" class="nav-link text-dark"><i class="fa fa-pencil"></i> Disciplinary sanctions</a>
     </li>
     <li class="nav-item py-2 px-4">
         <a href="/settings" class="nav-link text-dark"><i class="fa fa-gear"></i> Account settings</a>

@@ -43,13 +43,7 @@ class StudentsController extends Controller
             'pob'        => 'required'
         ]);
 
-        $student = new Student;
-        $student->firstname     = request("firstname");
-        $student->lastname      = request("lastname");
-        $student->pob           = request("pob");
-        $student->dob           = request("dob");
-        $student->gender        = request("gender");
-        $student->save();
+        Student::create($data);
 
         return back();
     }
@@ -95,14 +89,10 @@ class StudentsController extends Controller
         ]);
 
         $student = Student::find($id);
-        $student->firstname     = request("firstname");
-        $student->lastname      = request("lastname");
-        $student->pob           = request("pob");
-        $student->dob           = request("dob");
-        $student->gender        = request("gender");
-        $student->update();
 
-        return back();
+        $student->update($data);
+
+        return back()->with('message', 'updated successfully');
     }
 
     /**
