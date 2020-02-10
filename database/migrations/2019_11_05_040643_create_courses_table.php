@@ -18,7 +18,9 @@ class CreateCoursesTable extends Migration
             $table->string('title');
             $table->string('code')->unique();
             $table->integer('coefficient');
-            $table->integer('level_id');
+            // $table->integer('level_id');
+            // $table->integer('teacher_id');
+            // $table->integer('class_id');
             $table->timestamps();
         });
     }

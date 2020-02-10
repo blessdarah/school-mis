@@ -15,7 +15,7 @@ class CoursesController extends Controller
     public function index()
     {
         $courses = Course::latest()->get();
-        return view('admin/course_management')->with("courses", $courses);
+        return view('admin/courses/index')->with("courses", $courses);
     }
 
     /**
@@ -25,7 +25,7 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin/courses/create");
     }
 
     /**
@@ -34,19 +34,15 @@ class CoursesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Course $course)
     {
-        $data = $request->validate([
+        $data = request()->validate([
             'title'     => 'required',
             'code'      => 'required|min:5',
             'coefficient' => 'required',
         ]);
 
-        $course = new Course;
-        $course->title = request('title');
-        $course->code = request('code');
-        $course->coefficient = request('coefficient');
-        $course->save();
+        Course::create($data);
         return back();
     }
 
@@ -67,9 +63,9 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Course $course)
     {
-
+        return view('admin/courses/update', compact('course'));
     }
 
     /**
@@ -79,8 +75,17 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Course $course)
     {
+        $data = request()->validate([
+            'title'     => 'required',
+            'code'      => 'required|min:5',
+            'coefficient' => 'required',
+        ]);
+
+        $course->update($data);
+
+        return back();
 
     }
 

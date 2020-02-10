@@ -12,9 +12,9 @@
 */
 
 /* ROUTE RESOURCES */
-Route::resource('student', 'StudentsController');
-Route::resource('staff', 'StaffsController');
-Route::resource('course', 'CoursesController');
+Route::resource('admin/student', 'StudentsController');
+Route::resource('admin/staff', 'StaffsController');
+Route::resource('admin/course', 'CoursesController');
 Route::resource('level', 'LevelsController');
 Route::resource('sanction', 'SanctionsController');
 
@@ -36,7 +36,6 @@ Route::post('reminders', 'ReminderController@store');
 
 Route::get('/settings', 'StaffsController@account_settings');
 
-Route::post('admin/staff', 'StaffsController@store');
 // STUDENTS ROUTE
 Route::get('/admin/student_management', 'StudentsController@index');
 
@@ -49,9 +48,6 @@ Route::get('/reports', 'PagesController@reports');
 // Accessing the admin section
 Route::get('/admin', 'AdminController@index');
 
-// Routes that concerns the teacher from the admin section
-Route::get('/admin/staff_management', 'StaffsController@index');
-Route::get('/admin/add-staff', 'AdminController@add_staff');
 
 // Routes that concerns students from the admin section
 // Route::get('/admin/student_management', 'AdminController@student_management');

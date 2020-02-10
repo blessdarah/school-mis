@@ -15,17 +15,16 @@ class StudentsController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view("admin/student_management")->with("students", $students);
+        return view("admin/students/index", compact('students'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Student $student)
     {
-
+        return view('admin/students/create');
     }
 
     /**
@@ -40,7 +39,8 @@ class StudentsController extends Controller
             'firstname'  => 'required',
             'lastname'   => 'required',
             'dob'        => 'required',
-            'pob'        => 'required'
+            'pob'        => 'required',
+            'gender'    => ''
         ]);
 
         Student::create($data);
@@ -69,7 +69,7 @@ class StudentsController extends Controller
     public function edit($id)
     {
         $student = Student::find($id);
-        return view("admin/edit-student")->with("student", $student);
+        return view("admin/students/edit")->with("student", $student);
     }
 
     /**
@@ -79,16 +79,15 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Student $student)
     {
-        $data = $request->validate([
+        $data = request()->validate([
             'firstname'  => 'required',
             'lastname'   => 'required',
             'dob'        => 'required',
-            'pob'        => 'required'
+            'pob'        => 'required',
+            'gender'     => ''
         ]);
-
-        $student = Student::find($id);
 
         $student->update($data);
 

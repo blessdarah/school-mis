@@ -16,10 +16,13 @@ class StaffsController extends Controller
     public function index()
     {
        $staffs = Staff::all();
-       $classes = Level::all();
+       $levels = Level::all();
 
     //    dd($staffs);
-       return view('admin/staff_management', compact($staffs, $classes));
+       return view('admin/staffs/index', [
+           'staffs' => $staffs,
+           'levels' => $levels
+       ]);
     }
 
     /**
@@ -29,7 +32,7 @@ class StaffsController extends Controller
      */
     public function create()
     {
-
+        return view("admin/staffs/create");
     }
 
     /**
@@ -38,30 +41,22 @@ class StaffsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $staffInfo = $request->validate([
+        $staffInfo = request()->validate([
             'firstname' => 'required',
             'lastname'  => 'required',
             'username'  => 'required',
             'email'     => 'required',
-            'telephone' => 'required',
+            'gender'    => '',
+            'phonenumber' => 'required',
             'address'   => 'required',
             'password'  => 'required'
         ]);
 
-        $staff = new Staff;
-        $staff->first_name  = request('firstname');
-        $staff->last_name   = request('lastname');
-        $staff->username    = request('username');
-        $staff->password    = request('password');
-        $staff->email       = request('email');
-        $staff->phone_number   = request('telephone');
-        $staff->gender      = request('gender');
+       Staff::create($staffInfo);
 
-        $staff->save();
-
-        return back();
+        return back()->with('message', 'New staff added successfully');
     }
 
     /**
@@ -70,10 +65,9 @@ class StaffsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Staff $staff)
     {
-        $teacher = Staff::find($id);
-        return view('admin/staff_profile')->with("teacher", $teacher);
+        return view('admin/staffs/profile')->with("teacher", $staff);
     }
 
     /**
@@ -94,9 +88,24 @@ class StaffsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Staff $staff)
     {
-        //
+       $data = request()->validate([
+            'firstname' => 'required',
+            'lastname'  => 'required',
+            'username'  => 'required',
+            'email'     => 'required',
+            'gender'    => '',
+            'phonenumber' => 'required',
+            'address'   => 'required',
+            'password'  => 'required'
+       ]);
+
+       dd($staff);
+
+       $staff->update($data);
+
+       return back()->with('message', "Staff updated");
     }
 
     /**

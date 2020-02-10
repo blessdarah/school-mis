@@ -8,16 +8,16 @@
         <a href="/admin/" class="nav-link text-white">Dashboard</a>
     </li>
     <li class="nav-item py-2 px-4">
-        <a href="/admin/staff_management" class="nav-link text-dark">Manage staff</a>
+        <a href="/admin/staff" class="nav-link text-dark">Manage staff</a>
     </li>
     <li class="nav-item py-2 px-4">
-        <a href="/admin/student_management" class="nav-link text-dark">Manage students</a>
+        <a href="/admin/student" class="nav-link text-dark">Manage students</a>
     </li>
     <li class="nav-item py-2 px-4">
-        <a href="/admin/course_management" class="nav-link text-dark">Course management</a>
+        <a href="/admin/course" class="nav-link text-dark">Course management</a>
     </li>
     <li class="nav-item py-2 px-4">
-        <a href="/admin/class_management" class="nav-link text-dark">Class management</a>
+        <a href="/admin/classroom" class="nav-link text-dark">Class management</a>
     </li>
     <li class="nav-item py-2 px-4">
         {{-- TODO: FINISH PARENT PAGE   --}}
