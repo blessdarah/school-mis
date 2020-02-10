@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Staff;
 use App\Level;
+use App\Course;
 
 class StaffsController extends Controller
 {
@@ -32,7 +33,9 @@ class StaffsController extends Controller
      */
     public function create()
     {
-        return view("admin/staffs/create");
+        $levels = Level::all();
+        $courses = Course::all();
+        return view("admin/staffs/create", compact('levels', 'courses'));
     }
 
     /**
@@ -76,9 +79,11 @@ class StaffsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Staff $staff)
     {
-        //
+        $levels = Level::all();
+        $courses = Course::all();
+        return view('admin/staffs/edit', compact('staff', 'levels', 'courses'));
     }
 
     /**
@@ -100,8 +105,6 @@ class StaffsController extends Controller
             'address'   => 'required',
             'password'  => 'required'
        ]);
-
-       dd($staff);
 
        $staff->update($data);
 

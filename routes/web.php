@@ -15,7 +15,7 @@
 Route::resource('admin/student', 'StudentsController');
 Route::resource('admin/staff', 'StaffsController');
 Route::resource('admin/course', 'CoursesController');
-Route::resource('level', 'LevelsController');
+Route::resource('admin/level', 'LevelsController');
 Route::resource('sanction', 'SanctionsController');
 
 Route::get('/', 'PagesController@index');

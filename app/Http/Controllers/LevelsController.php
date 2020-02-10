@@ -14,7 +14,7 @@ class LevelsController extends Controller
     public function index()
     {
         $levels = Level::all();
-        return view('admin/class_management')->with('levels', $levels);
+        return view('admin/levels/index')->with('levels', $levels);
     }
 
     /**
@@ -24,7 +24,7 @@ class LevelsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/levels/create');
     }
 
     /**
@@ -35,13 +35,11 @@ class LevelsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'class-name' => 'required'
+        $data = request()->validate([
+            'name' => 'required'
         ]);
 
-        $class = new Level;
-        $class->name = request('class-name');
-        $class->save();
+        Level::create($data);
 
         return back();
     }
@@ -52,7 +50,7 @@ class LevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Level $level)
     {
         //
     }
@@ -63,9 +61,9 @@ class LevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Level $level)
     {
-        //
+        return view('admin/levels/edit')->with('level', $level);
     }
 
     /**
@@ -75,9 +73,14 @@ class LevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Level $level)
     {
-        //
+        $data = request()->validate([
+            'name' => 'required'
+        ]);
+
+        $level->update($data);
+        return back()->with('message', 'Class updated successfully');
     }
 
     /**
@@ -86,8 +89,9 @@ class LevelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Level $level)
     {
-        //
+        $level->delete();
+        return back()->with('message', 'Message deleted successfully');
     }
 }

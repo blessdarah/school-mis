@@ -19,19 +19,22 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($staffs as $staff)
+                @foreach ($staffs as $index => $staff)
                     <tr>
-                    <td>{{ $staff->id}}</td>
+                    <td>{{ $index + 1}}</td>
                         <td>{{ $staff->firstname}} {{ $staff->lastname }}</td>
                         <td>{{$staff->gender}}</td>
                         <td>Chemistry</span></td>
                         <td>Form 5B</td>
                         <td>
-                            <a href="/admin/staff/{{$staff->id}}" class="badge badge-info">view profile</a>
-                            <form action="/admin/staff/{{$staff->id}}" method="POST" class="form d-inline">
+                            <a href="/admin/staff/{{$staff->id}}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+
+                            <a href="/admin/staff/{{$staff->id}}/edit" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+
+                            <form action="/admin/staff/{{$staff->id}}" method="POST" class="form d-inline-block">
                                 @method('DELETE')
                                 @csrf
-                                <input type="submit" value="delete" class="btn btn-danger btn-sm p-0 px-2 border-0 rounded-pill">
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

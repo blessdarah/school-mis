@@ -41,12 +41,19 @@ Report cards will consist of the following information
 -   Teahcer can teach many subjects and classes
 -   Teacher fills in marks for each of his/her subjects
 
-## Class
-
--   Class contains many students
--   Many subjects are taught in many classes (_many-many_)
-
 ## Student
 
--   Student belongs to only one class
+-   Student belongs to only one class/level
 -   Student has only one parent or guardian
+-   Student has only one receipt
+
+## Class
+
+-   Class has many students
+-   Class has many subjects
+-   Has one class master/mistress
+
+## Subject
+
+-   Has many teachers
+-   Belongs to many classes

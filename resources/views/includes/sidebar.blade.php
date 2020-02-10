@@ -17,7 +17,7 @@
         <a href="/admin/course" class="nav-link text-dark">Course management</a>
     </li>
     <li class="nav-item py-2 px-4">
-        <a href="/admin/classroom" class="nav-link text-dark">Class management</a>
+        <a href="/admin/level" class="nav-link text-dark">Class management</a>
     </li>
     <li class="nav-item py-2 px-4">
         {{-- TODO: FINISH PARENT PAGE   --}}
