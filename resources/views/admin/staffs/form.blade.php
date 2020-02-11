@@ -1,8 +1,9 @@
 <div class="form-row">
     <div class="form-group col-sm-12 col-md-6 col-lg-4">
-        <small class="text-danger">{{$errors->first('firstname') }}</small>
+
         <label for="firstname">First name<sup class="text-danger">*</sup></label>
         <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname" value="{{old('firstname') ?? $staff->firstname ?? ''}}">
+        <small class="text-danger">{{$errors->first('firstname') }}</small>
     </div>
     <div class="form-group col-sm-12 col-md-6 col-lg-4">
         <label for="lastname">Last name<sup class="text-danger">*</sup></label>

@@ -18,45 +18,6 @@ class AdminController extends Controller
         return view('admin/dashboard', compact('students', 'staffs', 'classrooms'));
     }
 
-    public function parent_management() {
-        return view('admin/parent_management');
-    }
-
-    public function staff_management()
-    {
-        return view('admin/staff_management');
-    }
-
-    public function add_staff()
-    {
-        return view('admin/add-staff');
-    }
-
-    public function staff_profile()
-    {
-        return view('admin/staff_profile');
-    }
-
-    public function student_management()
-    {
-        return view('admin/student_management');
-    }
-
-    public function add_student()
-    {
-        return view('admin/add-student');
-    }
-
-    public function view_student()
-    {
-        return view('admin/view-student');
-    }
-
-    public function course_management()
-    {
-        return view('admin/course_management');
-    }
-
     public function finances()
     {
         return view('admin/finances');

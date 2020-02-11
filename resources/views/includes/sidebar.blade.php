@@ -21,7 +21,7 @@
     </li>
     <li class="nav-item py-2 px-4">
         {{-- TODO: FINISH PARENT PAGE   --}}
-        <a href="/admin/parent_management" class="nav-link text-dark">Manage Parents</a>
+        <a href="/admin/guardians" class="nav-link text-dark">Manage Parents</a>
     </li>
     <li class="nav-item py-2 px-4">
         <a href="/admin/school_reports" class="nav-link text-dark">School reports</a>
