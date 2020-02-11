@@ -93,7 +93,7 @@ class StaffsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Staff $staff)
+    public function update(Request $request, Staff $staff)
     {
        $data = request()->validate([
             'firstname' => 'required',
@@ -108,7 +108,10 @@ class StaffsController extends Controller
 
        $staff->update($data);
 
-       return back()->with('message', "Staff updated");
+       return back()->with([
+        'message', "Staff updated",
+        'teacher', $staff
+       ]);
     }
 
     /**

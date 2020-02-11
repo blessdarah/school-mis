@@ -36,8 +36,6 @@ Route::post('reminders', 'ReminderController@store');
 
 Route::get('/settings', 'StaffsController@account_settings');
 
-// STUDENTS ROUTE
-Route::get('/admin/student_management', 'StudentsController@index');
 
 // Routing to the teacher's dashboard page
 Route::get('/dashboard', 'PagesController@dashboard')->name("tdashboard");

@@ -11,15 +11,15 @@
         @method('PATCH')
 
         <a href="/admin/staff" class="btn btn-warning mb-2">cancel</a>
-        <button class="btn btn-primary mb-2" id="update-profile-btn">Update info</button>
+        <a href="/admin/staff/{{$teacher->id}}/edit" class="btn btn-primary mb-2">Update info</a>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="firstname">First name</label>
-                <input type="text" class="form-control" value="{{$teacher->firstname}}" disabled>
+                <input type="text" class="form-control" name="firstname" value="{{$teacher->firstname}}" disabled>
             </div>
             <div class="form-group col-md-6">
                 <label for="lastname">Last name</label>
-                <input type="text" class="form-control" value="{{$teacher->lastname}}" disabled>
+                <input type="text" class="form-control" name="lastname" value="{{$teacher->lastname}}" disabled>
             </div>
             <div class="form-group col-md-6">
                 <label for="username">Username</label>
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="telephone">Phone number</label>
-                <input type="text" class="form-control" value="{{$teacher->phonenumber}}" name="telephone" id="telephone" value="(+237) 672374414" placeholder="telephone" disabled>
+                <input type="text" class="form-control" value="{{$teacher->phonenumber}}" name="telephone" id="telephone" name = "phonenumber" placeholder="telephone" disabled>
             </div>
             <div class="form-group col-md-6">
                 <label for="email">Email address</label>
