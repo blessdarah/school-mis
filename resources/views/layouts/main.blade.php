@@ -8,6 +8,11 @@
             @show
         </div>
         <div class="col-lg-9 col-md-8 px-3">
+            @if(session()->has('message'))
+                <div class="alert alert-success" role="alert">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             @yield('content')
         </div>
     </div>

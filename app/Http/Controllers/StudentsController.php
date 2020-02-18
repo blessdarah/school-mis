@@ -45,7 +45,7 @@ class StudentsController extends Controller
 
         Student::create($data);
 
-        return back();
+        return back()->with('message', 'New student added.');
     }
 
     /**
@@ -57,7 +57,7 @@ class StudentsController extends Controller
     public function show($id)
     {
         $student = Student::find($id);
-        return view("admin/view-student")->with("student", $student);
+        return view("admin/view-student", compact('student'));
     }
 
     /**

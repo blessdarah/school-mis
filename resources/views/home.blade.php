@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! <a href="/admin" class="btn btn-warning px-3">Goto dashboard</a>
                 </div>
             </div>
         </div>

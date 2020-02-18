@@ -12,12 +12,12 @@
 */
 
 /* ROUTE RESOURCES */
-Route::resource('admin/student', 'StudentsController');
-Route::resource('admin/staff', 'StaffsController');
-Route::resource('admin/course', 'CoursesController');
-Route::resource('admin/level', 'LevelsController');
-Route::resource('admin/guardians', 'GuardiansController');
-Route::resource('sanction', 'SanctionsController');
+Route::resource('admin/student', 'StudentsController')->middleware('auth');
+Route::resource('admin/staff', 'StaffsController')->middleware('auth');
+Route::resource('admin/course', 'CoursesController')->middleware('auth');
+Route::resource('admin/level', 'LevelsController')->middleware('auth');
+Route::resource('admin/guardians', 'GuardiansController')->middleware('auth');
+Route::resource('sanction', 'SanctionsController')->middleware('auth');
 
 Route::get('/', 'PagesController@index');
 
@@ -25,12 +25,6 @@ Route::get('/register', 'PagesController@register');
 Route::post('/login', 'SessionsController@login');
 
 // Routing to the contact page
-Route::get('/contact', 'PagesController@contact');
-
-
-Route::get('/home', 'StaffsController@index');
-
-Route::get('/reports', 'StaffsController@reports');
 
 Route::get('/reminders', 'ReminderController@index');
 Route::post('reminders', 'ReminderController@store');
@@ -39,13 +33,13 @@ Route::get('/settings', 'StaffsController@account_settings');
 
 
 // Routing to the teacher's dashboard page
-Route::get('/dashboard', 'PagesController@dashboard')->name("tdashboard");
+Route::get('/dashboard', 'PagesController@dashboard')->middleware('auth');
 
 Route::get('/settings', 'PagesController@settings');
 Route::get('/reports', 'PagesController@reports');
 
 // Accessing the admin section
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index')->middleware('auth');
 
 
 // Routes that concerns the payment of fees

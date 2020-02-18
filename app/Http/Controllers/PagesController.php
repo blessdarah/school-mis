@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     // index function to show home page
     public function index() {
-    	return view('login');
+    	return view('home');
     }
 
     public function register() {
