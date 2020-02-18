@@ -103,6 +103,6 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         Student::find($id)->delete();
-        return back();
+        return back()->with('message', 'Studnet has been deleted from system');
     }
 }

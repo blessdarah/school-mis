@@ -43,7 +43,7 @@ class CoursesController extends Controller
         ]);
 
         Course::create($data);
-        return back();
+        return back()->with('message', 'New course added successfully');
     }
 
     /**
@@ -85,7 +85,7 @@ class CoursesController extends Controller
 
         $course->update($data);
 
-        return back();
+        return back()->with('message', 'Course has been updated successfully');;
 
     }
 
