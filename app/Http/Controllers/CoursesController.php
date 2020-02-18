@@ -97,7 +97,7 @@ class CoursesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
         Course::find($id)->delete();
         $message = "Subject deleted successfully";
         return back()->with("message", $message);
