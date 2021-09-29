@@ -1817,6 +1817,19 @@ cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
 
+datatables.net-dt@^1.10.19:
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/datatables.net-dt/-/datatables.net-dt-1.11.3.tgz#242556a490585b457b7d2b9f5fd8fb10761d621b"
+  dependencies:
+    datatables.net ">=1.10.25"
+    jquery ">=1.7"
+
+datatables.net@>=1.10.25, datatables.net@^1.11.3:
+  version "1.11.3"
+  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.11.3.tgz#80e691036efcd62467558ee64c07dd566cb761b4"
+  dependencies:
+    jquery ">=1.7"
+
 date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -3168,9 +3181,9 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jquery@^3.2:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
+jquery@>=1.7, jquery@^3.2:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
 
 js-levenshtein@^1.1.3:
   version "1.1.6"
